@@ -1,7 +1,6 @@
+#!/bin/bash
 # 1. Realice un script que guarde en el archivo /tmp/usuarios los nombres de los usuarios del
 # sistema cuyo UID sea mayor a 1000.
-#
-#!/bin/bash
 
 limit=1000
 

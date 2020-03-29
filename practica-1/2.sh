@@ -1,3 +1,4 @@
+#!/bin/bash
 # 2. Implemente un script que reciba como parámetro el nombre de un proceso e informe cada
 # 15 segundos cuántas instancias de ese proceso están en ejecución.i
 
