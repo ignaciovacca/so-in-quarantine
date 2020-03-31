@@ -7,20 +7,23 @@
 
 files=()
 
+IFS=$'\n'
 for file in `find $PWD -type f -executable`
 do
 	files=(${files[*]} $file)
 done
 
 function cantidad() {
-	echo "Cantidad de archivos: ${#files[@]};"
+	echo "Cantidad de archivos: ${#files[@]}"
 }
 
 function archivos() {
-	echo "Archivos en orden alfabetico"
+	echo "Archivos en orden alfabetico "
 	for a in "${files[@]}";do echo "$a";done | sort
 }
 
+echo "Directorio actual: $PWD"
 cantidad
 archivos
 
+exit 0

@@ -52,16 +52,14 @@
 # 	oktoberfest−14−3.jpg
 # 	oktoberfest−14−4.jpg
 #
-
-for dir in `find "." -mindepth 1 -type d -printf "%f\n" | sed 's/ /⻳/g'`
+IFS=$'\n'
+for dir in `find "." -mindepth 1 -type d -printf "%f\n"`
 do
 	index=1
-	dirname="`echo $dir | sed 's/⻳/ /g'`"
-	for file in `find "$dirname" -type f -name "*.jpg" -printf "%f\n" | sed 's/ /⻳/g' | sort`
+	for file in `find "$dir" -type f -name "*.jpg" -printf "%f\n" | sort`
 	do
-		filename="`echo $file | sed 's/⻳/ /g'`"
-		echo "mv $dirname/$filename $dirname/$dirname-$index.jpg"
-		mv "$dirname/$filename" "$dirname/$dirname-$index.jpg"
+		echo "mv $dir/$file $dir/$dir-$index.jpg"
+		mv "$dir/$file" "$dir/$dir-$index.jpg"
 		index=$(($index+1))
 	done
 done
